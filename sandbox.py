@@ -97,6 +97,9 @@ class Sandbox:
         for sep in ("/", "\\"):                          # project/../x  ->  ~/x
             for form in (str(self.root), self.root.as_posix()):
                 text = text.replace(form + sep + "..", "~")
+        exe = Path(sys.executable)
+        for form in (f'"{exe.as_posix()}"', f"'{exe.as_posix()}'", exe.as_posix(), str(exe)):
+            text = text.replace(form, "python")
         for p, nice in ((self.root, "~/project"), (self.base, "~")):
             for form in (str(p), p.as_posix()):
                 text = text.replace(form, nice)
@@ -157,7 +160,7 @@ class Sandbox:
             if line.startswith("#"):
                 out.append(line)
                 continue
-            out.append(f"$ {line}")
+            out.append(f"$ {self.tidy(line)}")
             result = self.run(line, env)
             if result:
                 out.append(result)
