@@ -219,7 +219,7 @@ def run_check(folder: Path, check) -> list[str]:
         return [f"{type(e).__name__}: {e}"]
 
 
-def solve(exercise_file: str, commands: str) -> None:
+def solve(exercise_file: str, commands) -> None:
     """Used by solutions/: fresh setup, run the solution commands, then check."""
     import importlib.util
     spec = importlib.util.spec_from_file_location("ex", ROOT / "exercises" / exercise_file)
@@ -230,7 +230,10 @@ def solve(exercise_file: str, commands: str) -> None:
     sb = Sandbox(folder)
     mod.setup(sb)
     sb.cwd = folder
-    print(sb.script(commands, show=False))
+    if callable(commands):                     # a Python solution (e.g. plumbing that needs IDs)
+        commands(sb)
+    else:
+        print(sb.script(commands, show=False))
     problems = run_check(folder, mod.check)
     if problems:
         print("\n".join(problems))
