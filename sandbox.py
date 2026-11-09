@@ -94,6 +94,9 @@ class Sandbox:
 
     def tidy(self, text: str) -> str:
         """Replace temporary folder paths with friendly ones."""
+        for sep in ("/", "\\"):                          # project/../x  ->  ~/x
+            for form in (str(self.root), self.root.as_posix()):
+                text = text.replace(form + sep + "..", "~")
         for p, nice in ((self.root, "~/project"), (self.base, "~")):
             for form in (str(p), p.as_posix()):
                 text = text.replace(form, nice)
@@ -107,7 +110,7 @@ class Sandbox:
         return subprocess.run(argv, cwd=self.cwd, env=env, capture_output=True, text=True,
                               encoding="utf-8", errors="replace")
 
-    def run(self, line: str) -> str:
+    def run(self, line: str, env: dict | None = None) -> str:
         """Run ONE command line and return its output (stdout + stderr)."""
         line = line.strip()
         if not line or line.startswith("#"):
@@ -136,15 +139,16 @@ class Sandbox:
             return ""
         if cmd == "cat":
             return self.read(parts[1]).rstrip(chr(10))
-        extra = {}
+        extra = dict(env or {})
         while "=" in parts[0] and not parts[0].startswith("-"):
             key, value = parts.pop(0).split("=", 1)
             extra[key] = value
         r = self._exec(parts, extra)
         return self.tidy((r.stdout + r.stderr).rstrip("\n"))
 
-    def script(self, text: str, show: bool = True) -> str:
-        """Run several lines; return (and print) a transcript with $ prompts."""
+    def script(self, text: str, show: bool = True, env: dict | None = None) -> str:
+        """Run several lines; return (and print) a transcript with $ prompts.
+        env: extra environment variables for every command (e.g. GIT_SEQUENCE_EDITOR)."""
         out = []
         for raw in text.strip("\n").splitlines():
             line = raw.strip()
@@ -154,7 +158,7 @@ class Sandbox:
                 out.append(line)
                 continue
             out.append(f"$ {line}")
-            result = self.run(line)
+            result = self.run(line, env)
             if result:
                 out.append(result)
         transcript = "\n".join(out)
@@ -165,7 +169,7 @@ class Sandbox:
 
     def fake_editor(self, new_todo: str) -> str:
         """A tiny 'editor' for git rebase -i: it replaces the todo list with new_todo.
-        Use it as:  GIT_SEQUENCE_EDITOR=<returned value> git rebase -i HEAD~3"""
+        Use it as:  sb.script("git rebase -i HEAD~3", env={"GIT_SEQUENCE_EDITOR": editor})"""
         helper = self.base / f"editor_{self.tick}.py"
         helper.write_text(
             "import sys\nopen(sys.argv[1], 'w').write(" + repr(new_todo.strip() + "\n") + ")\n",
