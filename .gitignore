@@ -1,0 +1,4 @@
+playground/
+__pycache__/
+*.pyc
+slides/src/html/*.html
