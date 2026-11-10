@@ -66,15 +66,15 @@ The answer key is at the bottom, and each answer says which lesson file to revis
 
 | # | Answer | Revisit |
 |---|--------|---------|
-| 1 | B | `01_objects.py` |
-| 2 | B | `01_objects.py` |
-| 3 | B | `01_objects.py` |
-| 4 | B | `01_objects.py` |
-| 5 | B | `02_refs_and_head.py` |
-| 6 | B | `02_refs_and_head.py` |
-| 7 | B | `02_refs_and_head.py` |
-| 8 | A | `03_commit_by_hand.py` |
-| 9 | B | `03_commit_by_hand.py` |
+| 1 | B | `01_objects.md` |
+| 2 | B | `01_objects.md` |
+| 3 | B | `01_objects.md` |
+| 4 | B | `01_objects.md` |
+| 5 | B | `02_refs_and_head.md` |
+| 6 | B | `02_refs_and_head.md` |
+| 7 | B | `02_refs_and_head.md` |
+| 8 | A | `03_commit_by_hand.md` |
+| 9 | B | `03_commit_by_hand.md` |
 
 </details>
 

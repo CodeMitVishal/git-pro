@@ -6,31 +6,29 @@ The everyday loop: edit → `git add` → `git commit`, the three areas, reading
 
 ## Lessons
 
-Every lesson runs real Git commands in a throwaway sandbox and prints them with their output. Your own repositories are never touched.
+Every lesson is a page to read: an everyday picture, a commit-graph diagram, then real Git commands with their real output. Each lesson ends with **Try it yourself**: type the same commands in Git Bash, in a new empty folder.
 
 | Lesson | File | Key idea |
 |---|---|---|
-| The three areas | [`01_three_areas.py`](01_three_areas.py) | working tree → staging → repository; git status |
-| diff & log | [`02_diff_and_log.py`](02_diff_and_log.py) | diff, diff --staged, log, show |
-| .gitignore | [`03_gitignore.py`](03_gitignore.py) | ignore patterns, check-ignore, rm --cached |
-
-```bash
-python 02_first_repository/01_three_areas.py
-```
+| The three areas | [`01_three_areas.md`](01_three_areas.md) | working tree → staging → repository; git status |
+| diff & log | [`02_diff_and_log.md`](02_diff_and_log.md) | diff, diff --staged, log, show |
+| .gitignore | [`03_gitignore.md`](03_gitignore.md) | ignore patterns, check-ignore, rm --cached |
 
 ## Exercise: Clean commits and a .gitignore
 
 Split messy changes into three focused commits and keep secrets and logs out of Git.
 
+Open **Git Bash** (Windows) or any terminal in the course folder. The full task is in [`exercises/ex02_clean_commits/README.md`](../exercises/ex02_clean_commits/README.md).
+
 ```bash
-python exercises/ex02_clean_commits.py setup
+bash exercises/ex02_clean_commits/setup.sh
 ```
 
 ```bash
-python exercises/ex02_clean_commits.py check
+bash exercises/ex02_clean_commits/check.sh
 ```
 
-- Solution: [`solutions/ex02_clean_commits.py`](../solutions/ex02_clean_commits.py)
+- Solution: [`solutions/ex02_clean_commits.md`](../solutions/ex02_clean_commits.md)
 
 ## Knowledge check
 

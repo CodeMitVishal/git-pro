@@ -60,14 +60,14 @@ The answer key is at the bottom, and each answer says which lesson file to revis
 
 | # | Answer | Revisit |
 |---|--------|---------|
-| 1 | B | `01_why_version_control.py` |
-| 2 | B | `01_why_version_control.py` |
-| 3 | B | `01_why_version_control.py` |
-| 4 | A | `01_why_version_control.py` |
-| 5 | C | `02_install_and_config.py` |
-| 6 | B | `02_install_and_config.py` |
-| 7 | B | `02_install_and_config.py` |
-| 8 | B | `02_install_and_config.py` |
+| 1 | B | `01_why_version_control.md` |
+| 2 | B | `01_why_version_control.md` |
+| 3 | B | `01_why_version_control.md` |
+| 4 | A | `01_why_version_control.md` |
+| 5 | C | `02_install_and_config.md` |
+| 6 | B | `02_install_and_config.md` |
+| 7 | B | `02_install_and_config.md` |
+| 8 | B | `02_install_and_config.md` |
 
 </details>
 

@@ -23,7 +23,7 @@ git commit -qm "Add wishlist"
 '''
 SLIDES = [
  cover("12", "Capstone: rescue a messy repo", "Look, find, plan, act: fix any broken repository calmly and ship a release.",
-       [("Rescue walkthrough", "01_rescue_walkthrough.py"), ("Exercise: rescue + release", "ex12_rescue_the_repo.py"),
+       [("Rescue walkthrough", "01_rescue_walkthrough.md"), ("Exercise: rescue + release", "ex12_rescue_the_repo/"),
         ("Final exam", "QUIZ.md"), ("Interview Q&amp;A", "INTERVIEW.md")], M),
 
  why(M, "Rescue", "\"Help, I broke Git!\"",
@@ -108,5 +108,8 @@ reflog · revert · bisect · stash'''),
       "fetch/pull --rebase; force only with --force-with-lease.",
       "reflog, bisect, blame and -S solve the hard problems.",
       "Hooks, .gitignore, .gitattributes, secret scanning from day one."],
-     "Do <b>exercises/ex12_rescue_the_repo.py</b>, then the <b>final exam</b> and the <b>interview prep</b>."),
+     "Do <b>exercises/ex12_rescue_the_repo/</b>, then the <b>final exam</b> and the <b>interview prep</b>."),
 ]
+
+from visuals import add_visuals  # noqa: E402
+SLIDES = add_visuals(12, SLIDES)

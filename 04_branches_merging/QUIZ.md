@@ -72,16 +72,16 @@ The answer key is at the bottom, and each answer says which lesson file to revis
 
 | # | Answer | Revisit |
 |---|--------|---------|
-| 1 | B | `01_branches_are_pointers.py` |
-| 2 | B | `01_branches_are_pointers.py` |
-| 3 | B | `01_branches_are_pointers.py` |
-| 4 | B | `02_fast_forward_and_three_way.py` |
-| 5 | C | `02_fast_forward_and_three_way.py` |
-| 6 | B | `02_fast_forward_and_three_way.py` |
-| 7 | B | `02_fast_forward_and_three_way.py` |
-| 8 | B | `03_merge_conflicts.py` |
-| 9 | B | `03_merge_conflicts.py` |
-| 10 | B | `03_merge_conflicts.py` |
+| 1 | B | `01_branches_are_pointers.md` |
+| 2 | B | `01_branches_are_pointers.md` |
+| 3 | B | `01_branches_are_pointers.md` |
+| 4 | B | `02_fast_forward_and_three_way.md` |
+| 5 | C | `02_fast_forward_and_three_way.md` |
+| 6 | B | `02_fast_forward_and_three_way.md` |
+| 7 | B | `02_fast_forward_and_three_way.md` |
+| 8 | B | `03_merge_conflicts.md` |
+| 9 | B | `03_merge_conflicts.md` |
+| 10 | B | `03_merge_conflicts.md` |
 
 </details>
 

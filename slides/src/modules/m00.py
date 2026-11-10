@@ -75,18 +75,18 @@ SLIDES = [
   <div class="row" style="gap:48px">
     <div class="steps" style="flex:1">
       <div class="step"><span>1</span><p>Watch or read the module's <b>slides</b>.</p></div>
-      <div class="step"><span>2</span><p><b>Run every lesson</b>: it prints each command and its output.</p></div>
+      <div class="step"><span>2</span><p><b>Read every lesson</b> and type each command yourself in Git Bash.</p></div>
       <div class="step"><span>3</span><p>Do the <b>exercise</b> in its playground repo until <b>All checks passed!</b></p></div>
       <div class="step"><span>4</span><p>Take the <b>quiz</b>, then answer <b>INTERVIEW.md</b> out loud.</p></div>
       <div class="step"><span>5</span><p>Before an interview: read <b>interview_prep/</b>.</p></div>
     </div>
-    <div class="code" style="width:780px;font-size:24px"><span class="c"># needs Git and Python 3.10+</span>
+    <div class="code" style="width:780px;font-size:24px"><span class="c"># needs only Git (Git Bash on Windows)</span>
 git clone https://github.com/
     CodeMitVishal/git-pro.git
 cd git-pro
-python 01_git_basics/01_why_version_control.py
-python exercises/ex01_first_repo.py setup
-python exercises/ex01_first_repo.py check</div>
+bash exercises/ex01_first_repo/setup.sh
+cd playground/ex01   # do the task
+bash ../../exercises/ex01_first_repo/check.sh</div>
   </div>
   {foot("How to study")}
 </section>""",

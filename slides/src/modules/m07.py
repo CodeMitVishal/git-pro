@@ -20,9 +20,9 @@ git commit -m "Add footer"
 '''
 SLIDES = [
  cover("07", "Team workflows", "How real teams ship: GitHub flow, pull requests, reviews, commit conventions and branching strategies.",
-       [("GitHub flow", "01_github_flow.py"), ("Conventional Commits", "02_conventional_commits.py"),
+       [("GitHub flow", "01_github_flow.md"), ("Conventional Commits", "02_conventional_commits.md"),
         ("Branching strategies", "03_branching_strategies.md"), ("Pull requests &amp; reviews", "04_pull_requests_and_reviews.md"),
-        ("Exercise: great commits", "ex07_conventional_commits.py"), ("Interview Q&amp;A", "INTERVIEW.md")], M),
+        ("Exercise: great commits", "ex07_conventional_commits/"), ("Interview Q&amp;A", "INTERVIEW.md")], M),
 
  why(M, "Workflows", "Ten developers, one main branch",
      "Without rules, people push half-finished work to main, production breaks on Friday evening, and nobody knows which change caused it.",
@@ -114,5 +114,5 @@ git branch -d feature/SHOP-142-coupons'''),
       "<b>type(scope): summary</b> commits power changelogs and versions.",
       "GitHub flow for most web teams; Git flow for versioned releases.",
       "Protect main: reviews, checks, CODEOWNERS."],
-     "Do <b>exercises/ex07_conventional_commits.py</b>: three changes, three clean commits."),
+     "Do <b>exercises/ex07_conventional_commits/</b>: three changes, three clean commits."),
 ]

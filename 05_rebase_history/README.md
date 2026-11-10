@@ -6,31 +6,29 @@ Keep history clean and linear: rebase onto main, squash and reword with interact
 
 ## Lessons
 
-Every lesson runs real Git commands in a throwaway sandbox and prints them with their output. Your own repositories are never touched.
+Every lesson is a page to read: an everyday picture, a commit-graph diagram, then real Git commands with their real output. Each lesson ends with **Try it yourself**: type the same commands in Git Bash, in a new empty folder.
 
 | Lesson | File | Key idea |
 |---|---|---|
-| rebase basics | [`01_rebase_basics.py`](01_rebase_basics.py) | replay commits on main; conflicts during rebase; the golden rule |
-| Interactive rebase | [`02_interactive_rebase.py`](02_interactive_rebase.py) | squash, fixup, reword, drop; --fixup + --autosquash |
-| cherry-pick | [`03_cherry_pick.py`](03_cherry_pick.py) | copy one commit (a hotfix) to another branch |
-
-```bash
-python 05_rebase_history/01_rebase_basics.py
-```
+| rebase basics | [`01_rebase_basics.md`](01_rebase_basics.md) | replay commits on main; conflicts during rebase; the golden rule |
+| Interactive rebase | [`02_interactive_rebase.md`](02_interactive_rebase.md) | squash, fixup, reword, drop; --fixup + --autosquash |
+| cherry-pick | [`03_cherry_pick.md`](03_cherry_pick.md) | copy one commit (a hotfix) to another branch |
 
 ## Exercise: Clean up a branch before the pull request
 
 Squash three messy commits into one and move them onto the latest main.
 
+Open **Git Bash** (Windows) or any terminal in the course folder. The full task is in [`exercises/ex05_clean_history/README.md`](../exercises/ex05_clean_history/README.md).
+
 ```bash
-python exercises/ex05_clean_history.py setup
+bash exercises/ex05_clean_history/setup.sh
 ```
 
 ```bash
-python exercises/ex05_clean_history.py check
+bash exercises/ex05_clean_history/check.sh
 ```
 
-- Solution: [`solutions/ex05_clean_history.py`](../solutions/ex05_clean_history.py)
+- Solution: [`solutions/ex05_clean_history.md`](../solutions/ex05_clean_history.md)
 
 ## Knowledge check
 

@@ -6,31 +6,29 @@ Put unfinished work aside in seconds, give releases permanent names with tags an
 
 ## Lessons
 
-Every lesson runs real Git commands in a throwaway sandbox and prints them with their output. Your own repositories are never touched.
+Every lesson is a page to read: an everyday picture, a commit-graph diagram, then real Git commands with their real output. Each lesson ends with **Try it yourself**: type the same commands in Git Bash, in a new empty folder.
 
 | Lesson | File | Key idea |
 |---|---|---|
-| git stash | [`01_stash.py`](01_stash.py) | push -u, list, pop, apply, drop |
-| Tags & SemVer | [`02_tags_and_semver.py`](02_tags_and_semver.py) | lightweight vs annotated, pushing tags, describe, MAJOR.MINOR.PATCH |
-| Release notes | [`03_release_notes.py`](03_release_notes.py) | log A..B, diff --stat, shortlog between tags |
-
-```bash
-python 08_stash_tags_releases/01_stash.py
-```
+| git stash | [`01_stash.md`](01_stash.md) | push -u, list, pop, apply, drop |
+| Tags & SemVer | [`02_tags_and_semver.md`](02_tags_and_semver.md) | lightweight vs annotated, pushing tags, describe, MAJOR.MINOR.PATCH |
+| Release notes | [`03_release_notes.md`](03_release_notes.md) | log A..B, diff --stat, shortlog between tags |
 
 ## Exercise: Interrupted: ship a hotfix release
 
 Stash unfinished work, tag a hotfix release, and restore your work exactly as it was.
 
+Open **Git Bash** (Windows) or any terminal in the course folder. The full task is in [`exercises/ex08_hotfix_release/README.md`](../exercises/ex08_hotfix_release/README.md).
+
 ```bash
-python exercises/ex08_hotfix_release.py setup
+bash exercises/ex08_hotfix_release/setup.sh
 ```
 
 ```bash
-python exercises/ex08_hotfix_release.py check
+bash exercises/ex08_hotfix_release/check.sh
 ```
 
-- Solution: [`solutions/ex08_hotfix_release.py`](../solutions/ex08_hotfix_release.py)
+- Solution: [`solutions/ex08_hotfix_release.md`](../solutions/ex08_hotfix_release.md)
 
 ## Knowledge check
 

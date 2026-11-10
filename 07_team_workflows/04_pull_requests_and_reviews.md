@@ -44,7 +44,7 @@ Be kind and specific: *"What happens if `items` is empty? Maybe return 0 here?"*
 | **Require linear history** | only squash or rebase merges |
 | **Dismiss stale approvals** | new commits need a new review |
 
-## Merge buttons (see `01_github_flow.py`)
+## Merge buttons (see `01_github_flow.md`)
 
 | Button | History | Use when |
 |---|---|---|

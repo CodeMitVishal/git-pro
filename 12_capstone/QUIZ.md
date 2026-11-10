@@ -102,21 +102,21 @@ The answer key is at the bottom, and each answer says which lesson file to revis
 
 | # | Answer | Revisit |
 |---|--------|---------|
-| 1 | B | `02_first_repository/02_diff_and_log.py` |
-| 2 | B | `03_undoing_things/03_revert_and_reflog.py` |
-| 3 | B | `03_undoing_things/03_revert_and_reflog.py` |
-| 4 | B | `04_branches_merging/02_fast_forward_and_three_way.py` |
-| 5 | B | `05_rebase_history/01_rebase_basics.py` |
-| 6 | B | `05_rebase_history/02_interactive_rebase.py` |
-| 7 | B | `06_remotes_github/02_fetch_vs_pull.py` |
-| 8 | B | `06_remotes_github/03_rejected_push_and_force.py` |
-| 9 | B | `07_team_workflows/01_github_flow.py` |
-| 10 | B | `08_stash_tags_releases/02_tags_and_semver.py` |
-| 11 | B | `09_git_internals/01_objects.py` |
-| 12 | B | `10_debugging_history/03_bisect.py` |
-| 13 | A | `10_debugging_history/02_blame_and_pickaxe.py` |
+| 1 | B | `02_first_repository/02_diff_and_log.md` |
+| 2 | B | `03_undoing_things/03_revert_and_reflog.md` |
+| 3 | B | `03_undoing_things/03_revert_and_reflog.md` |
+| 4 | B | `04_branches_merging/02_fast_forward_and_three_way.md` |
+| 5 | B | `05_rebase_history/01_rebase_basics.md` |
+| 6 | B | `05_rebase_history/02_interactive_rebase.md` |
+| 7 | B | `06_remotes_github/02_fetch_vs_pull.md` |
+| 8 | B | `06_remotes_github/03_rejected_push_and_force.md` |
+| 9 | B | `07_team_workflows/01_github_flow.md` |
+| 10 | B | `08_stash_tags_releases/02_tags_and_semver.md` |
+| 11 | B | `09_git_internals/01_objects.md` |
+| 12 | B | `10_debugging_history/03_bisect.md` |
+| 13 | A | `10_debugging_history/02_blame_and_pickaxe.md` |
 | 14 | B | `11_advanced_git/05_secrets_big_files_and_signing.md` |
-| 15 | B | `01_rescue_walkthrough.py` |
+| 15 | B | `01_rescue_walkthrough.md` |
 
 </details>
 

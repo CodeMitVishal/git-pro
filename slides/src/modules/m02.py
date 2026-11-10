@@ -4,8 +4,8 @@ from teach_kit import cover, interview, job, mistake, picture, recap, terminal, 
 M = "Module 2 · Your first repository"
 SLIDES = [
  cover("02", "Your first repository", "The everyday loop: edit, add, commit. Read history and keep junk out.",
-       [("The three areas", "01_three_areas.py"), ("diff &amp; log", "02_diff_and_log.py"), (".gitignore", "03_gitignore.py"),
-        ("Exercise: clean commits", "ex02_clean_commits.py"), ("Interview Q&amp;A", "INTERVIEW.md")], M),
+       [("The three areas", "01_three_areas.md"), ("diff &amp; log", "02_diff_and_log.md"), (".gitignore", "03_gitignore.md"),
+        ("Exercise: clean commits", "ex02_clean_commits/"), ("Interview Q&amp;A", "INTERVIEW.md")], M),
 
  why(M, "The staging area", "Why add before commit?",
      "You fixed a bug, added debug prints and started a new feature, all in the same files. One big commit called "
@@ -123,5 +123,8 @@ git log --oneline -5'''),
       "<b>git diff</b> vs <b>git diff --staged</b>.",
       "<b>git log --oneline</b>, <b>--stat</b>, <b>-p</b>, <b>git show</b>.",
       "<b>.gitignore</b> for junk and secrets; <b>git rm --cached</b> for tracked files."],
-     "Do <b>exercises/ex02_clean_commits.py</b>: three focused commits and a .gitignore."),
+     "Do <b>exercises/ex02_clean_commits/</b>: three focused commits and a .gitignore."),
 ]
+
+from visuals import add_visuals  # noqa: E402
+SLIDES = add_visuals(2, SLIDES)

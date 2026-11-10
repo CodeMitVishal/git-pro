@@ -281,3 +281,128 @@ EXTRA_CSS += """
 .shell .tp { color:#7EE2A8; font-weight:700; } .shell .tc { color:#FFFFFF; font-weight:700; }
 .shell .to { color:#AAB4C5; } .shell .c { color:#F2C14E; }
 """
+
+
+# ============================================================ Git Pro: commit-graph pictures
+LANE_COLORS = ["#1764ab", "#2E7D5B", "#c2410c", "#7c3aed"]
+
+
+def G(commits, refs=None, head=None, lanes=None, new=(), ghost=(), marks=None):
+    """A commit graph. commits: list of (id, lane[, parents]) in left-to-right order.
+    parents: a commit id or tuple of ids; default = previous commit in the same lane.
+    refs: {"main": "C"} branch/tag labels; head: the ref (or commit id) HEAD points to.
+    new: commits drawn highlighted; ghost: commits drawn faded (abandoned / rewritten).
+    marks: {"C": "good"} small labels under commits."""
+    return dict(commits=commits, refs=refs or {}, head=head, lanes=lanes, new=set(new), ghost=set(ghost), marks=marks or {})
+
+
+def graph_svg(spec, width=760, height=420):
+    commits = spec["commits"]
+    lanes_n = max(c[1] for c in commits) + 1
+    names = spec["lanes"] or [""] * lanes_n
+    step = min(150, (width - 120) / max(1, len(commits) - 1)) if len(commits) > 1 else 0
+    lane_gap = 150 if lanes_n > 1 else 0
+    top = (height - lane_gap * (lanes_n - 1)) / 2 + (10 if lanes_n == 1 else 0)
+    pos, last_in_lane, parts = {}, {}, []
+    x0 = (width - step * (len(commits) - 1)) / 2
+    for i, c in enumerate(commits):
+        pos[c[0]] = (x0 + i * step, top + c[1] * lane_gap)
+    edges = []
+    for c in commits:
+        cid, lane = c[0], c[1]
+        if len(c) > 2 and c[2] is not None:
+            parents = c[2] if isinstance(c[2], (tuple, list)) else (c[2],)
+        else:
+            parents = (last_in_lane[lane],) if lane in last_in_lane else ()
+        last_in_lane[lane] = cid
+        for p in parents:
+            edges.append((p, cid, lane))
+    for p, c, lane in edges:
+        (x1, y1), (x2, y2) = pos[p], pos[c]
+        col = LANE_COLORS[lane % 4]
+        faded = c in spec["ghost"]
+        dash = ' stroke-dasharray="8 7"' if faded else ""
+        op = ' opacity="0.35"' if faded else ""
+        if y1 == y2:
+            d = f"M{x1},{y1} L{x2},{y2}"
+        else:
+            mx = (x1 + x2) / 2
+            d = f"M{x1},{y1} C{mx},{y1} {mx},{y2} {x2},{y2}"
+        parts.append(f'<path d="{d}" stroke="{col}" stroke-width="6" fill="none"{dash}{op}/>')
+    for c in commits:
+        cid, lane = c[0], c[1]
+        x, y = pos[cid]
+        col = LANE_COLORS[lane % 4]
+        faded, fresh = cid in spec["ghost"], cid in spec["new"]
+        op = ' opacity="0.35"' if faded else ""
+        dash = ' stroke-dasharray="6 5"' if faded else ""
+        if fresh:
+            parts.append(f'<circle cx="{x}" cy="{y}" r="36" fill="none" stroke="#F2C14E" stroke-width="5"/>')
+        parts.append(f'<circle cx="{x}" cy="{y}" r="27" fill="{col}" stroke="#fff" stroke-width="4"{dash}{op}/>')
+        parts.append(f'<text x="{x}" y="{y + 9}" text-anchor="middle" font-size="25" font-weight="700" fill="#fff"{op}>{html.escape(cid)}</text>')
+        if cid in spec["marks"]:
+            m = spec["marks"][cid]
+            mc = {"good": "#2E7D5B", "bad": "#C2413B"}.get(m, "#5b6b7b")
+            parts.append(f'<text x="{x}" y="{y + 62}" text-anchor="middle" font-size="20" font-weight="700" fill="{mc}">{html.escape(m)}</text>')
+    # ref labels: stacked above (lane 0) or below (other lanes) the commit they point to
+    stacks = {}
+    head = spec["head"]
+    for ref, target in spec["refs"].items():
+        stacks.setdefault(target, []).append(ref)
+    if head and head not in spec["refs"]:              # detached HEAD on a commit
+        stacks.setdefault(head, []).append("HEAD")
+    for target, refs in stacks.items():
+        x, y = pos[target]
+        lane = next(c[1] for c in commits if c[0] == target)
+        above = lane == 0
+        for k, ref in enumerate(refs):
+            is_tag = ref.startswith("v") and ref[1:2].isdigit()
+            label = ref
+            if ref == head:
+                label = f"HEAD → {ref}"
+            w = 15 * len(label) + 28
+            ly = y - 62 - k * 46 if above else y + 52 + k * 46
+            if ref == "HEAD":
+                fill, txt = "#121826", "#F2C14E"
+            elif is_tag:
+                fill, txt = "#F2C14E", "#121826"
+            elif ref.startswith("origin/"):
+                fill, txt = "#ffffff", "#5b6b7b"
+            else:
+                fill, txt = LANE_COLORS[lane % 4], "#ffffff"
+            stroke = ' stroke="#5b6b7b" stroke-width="2" stroke-dasharray="5 4"' if ref.startswith("origin/") else ""
+            parts.append(f'<rect x="{x - w / 2}" y="{ly - 19}" width="{w}" height="38" rx="19" fill="{fill}"{stroke}/>')
+            parts.append(f'<text x="{x}" y="{ly + 8}" text-anchor="middle" font-size="21" font-weight="700" fill="{txt}" font-family="Roboto Mono, monospace">{html.escape(label)}</text>')
+    if spec["lanes"]:
+        for i, name in enumerate(spec["lanes"]):
+            parts.append(f'<text x="8" y="{top + i * lane_gap + 8}" font-size="18" fill="#8A93A6">{html.escape(name)}</text>')
+    return f'<svg viewBox="0 0 {width} {height}" width="{width}" height="{height}" font-family="Space Grotesk, Arial, sans-serif">{"".join(parts)}</svg>'
+
+
+def graph(mod, eyebrow, h2, panels, caption="", steps=()):
+    """1 or 2 panels of commit graphs: [("label", G(...)), ("git merge x", G(...))]."""
+    if len(panels) == 1:
+        label, spec = panels[0]
+        body = f'<div class="gpanel"><p class="glabel">{label}</p>{graph_svg(spec, width=1000, height=440)}</div>'
+        st = "".join(f'<div class="step"><span>{i}</span><p>{s}</p></div>' for i, s in enumerate(steps, 1))
+        body = f'<div class="row" style="align-items:center">{body}<div class="steps" style="flex:1">{st}</div></div>'
+    else:
+        (l1, s1), (l2, s2) = panels
+        body = (f'<div class="gwrap"><div class="gpanel"><p class="glabel">{l1}</p>{graph_svg(s1)}</div>'
+                f'<div class="garrow">&#10140;</div>'
+                f'<div class="gpanel"><p class="glabel cmd">{l2}</p>{graph_svg(s2)}</div></div>')
+    cap = f'<p class="gcaption">{caption}</p>' if caption else ""
+    return f"""<section>{head(eyebrow, h2, "pic")}
+  {body}{cap}
+  {foot(mod)}</section>"""
+
+
+EXTRA_CSS += """
+.gwrap { display:flex; align-items:center; justify-content:space-between; gap:8px; }
+.gpanel { background:#FFFDF8; border:1px solid #E3DFD3; border-radius:22px; padding:14px 18px 6px; }
+.glabel { font-size:24px; font-weight:700; color:#121826; }
+.glabel.cmd { font-family:'Roboto Mono', monospace; color:#1764ab; }
+.garrow { font-size:64px; color:#1764ab; }
+.gcaption { font-size:28px; line-height:1.4; text-align:center; color:#3F4859; }
+.gcaption b { color:#121826; }
+"""

@@ -6,31 +6,29 @@ Work in parallel without breaking main: branches as pointers, fast-forward vs th
 
 ## Lessons
 
-Every lesson runs real Git commands in a throwaway sandbox and prints them with their output. Your own repositories are never touched.
+Every lesson is a page to read: an everyday picture, a commit-graph diagram, then real Git commands with their real output. Each lesson ends with **Try it yourself**: type the same commands in Git Bash, in a new empty folder.
 
 | Lesson | File | Key idea |
 |---|---|---|
-| Branches are pointers | [`01_branches_are_pointers.py`](01_branches_are_pointers.py) | branch, switch -c, HEAD, what a branch really is |
-| Fast-forward vs three-way | [`02_fast_forward_and_three_way.py`](02_fast_forward_and_three_way.py) | merge, --no-ff, merge commits with two parents |
-| Merge conflicts | [`03_merge_conflicts.py`](03_merge_conflicts.py) | conflict markers, resolve, add, commit, --abort |
-
-```bash
-python 04_branches_merging/01_branches_are_pointers.py
-```
+| Branches are pointers | [`01_branches_are_pointers.md`](01_branches_are_pointers.md) | branch, switch -c, HEAD, what a branch really is |
+| Fast-forward vs three-way | [`02_fast_forward_and_three_way.md`](02_fast_forward_and_three_way.md) | merge, --no-ff, merge commits with two parents |
+| Merge conflicts | [`03_merge_conflicts.md`](03_merge_conflicts.md) | conflict markers, resolve, add, commit, --abort |
 
 ## Exercise: Merge a feature and resolve the conflict
 
 Merge a branch that changed the same line as main, resolve the conflict exactly, and clean up the branch.
 
+Open **Git Bash** (Windows) or any terminal in the course folder. The full task is in [`exercises/ex04_merge_conflict/README.md`](../exercises/ex04_merge_conflict/README.md).
+
 ```bash
-python exercises/ex04_merge_conflict.py setup
+bash exercises/ex04_merge_conflict/setup.sh
 ```
 
 ```bash
-python exercises/ex04_merge_conflict.py check
+bash exercises/ex04_merge_conflict/check.sh
 ```
 
-- Solution: [`solutions/ex04_merge_conflict.py`](../solutions/ex04_merge_conflict.py)
+- Solution: [`solutions/ex04_merge_conflict.md`](../solutions/ex04_merge_conflict.md)
 
 ## Knowledge check
 

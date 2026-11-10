@@ -14,8 +14,8 @@ git commit -qam "Version 3"
 '''
 SLIDES = [
  cover("03", "Undoing things", "Every mistake has an undo: restore, amend, reset, revert, and the reflog safety net.",
-       [("restore &amp; amend", "01_restore_and_amend.py"), ("reset: soft, mixed, hard", "02_reset_three_modes.py"),
-        ("revert &amp; reflog", "03_revert_and_reflog.py"), ("Exercise: undo three mistakes", "ex03_undo_mistakes.py"),
+       [("restore &amp; amend", "01_restore_and_amend.md"), ("reset: soft, mixed, hard", "02_reset_three_modes.md"),
+        ("revert &amp; reflog", "03_revert_and_reflog.md"), ("Exercise: undo three mistakes", "ex03_undo_mistakes/"),
         ("Interview Q&amp;A", "INTERVIEW.md")], M),
 
  why(M, "Undo", "Mistakes are normal. Panic is optional.",
@@ -135,5 +135,8 @@ git branch rescue HEAD@{3}'''),
       "<b>reset --soft/--mixed/--hard</b> moves the branch back.",
       "<b>revert</b> for anything already shared.",
       "<b>reflog</b> finds \"lost\" commits."],
-     "Do <b>exercises/ex03_undo_mistakes.py</b>: three mistakes, three undos."),
+     "Do <b>exercises/ex03_undo_mistakes/</b>: three mistakes, three undos."),
 ]
+
+from visuals import add_visuals  # noqa: E402
+SLIDES = add_visuals(3, SLIDES)

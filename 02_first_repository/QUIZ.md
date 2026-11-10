@@ -66,15 +66,15 @@ The answer key is at the bottom, and each answer says which lesson file to revis
 
 | # | Answer | Revisit |
 |---|--------|---------|
-| 1 | B | `01_three_areas.py` |
-| 2 | B | `01_three_areas.py` |
-| 3 | B | `01_three_areas.py` |
-| 4 | B | `01_three_areas.py` |
-| 5 | B | `02_diff_and_log.py` |
-| 6 | B | `02_diff_and_log.py` |
-| 7 | B | `03_gitignore.py` |
-| 8 | B | `03_gitignore.py` |
-| 9 | B | `03_gitignore.py` |
+| 1 | B | `01_three_areas.md` |
+| 2 | B | `01_three_areas.md` |
+| 3 | B | `01_three_areas.md` |
+| 4 | B | `01_three_areas.md` |
+| 5 | B | `02_diff_and_log.md` |
+| 6 | B | `02_diff_and_log.md` |
+| 7 | B | `03_gitignore.md` |
+| 8 | B | `03_gitignore.md` |
+| 9 | B | `03_gitignore.md` |
 
 </details>
 

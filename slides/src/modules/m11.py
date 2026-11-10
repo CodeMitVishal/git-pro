@@ -25,9 +25,9 @@ def crlf(sb):
 
 SLIDES = [
  cover("11", "Advanced Git", "Hooks, worktrees, submodules, line endings, secrets in history, LFS and huge repos.",
-       [("Hooks", "01_hooks.py"), ("Worktrees", "02_worktrees.py"), ("Submodules &amp; subtree", "03_submodules_and_subtree.py"),
-        ("Line endings", "04_line_endings_and_attributes.py"), ("Secrets, LFS, signing", "05_secrets_big_files_and_signing.md"),
-        ("Exercise: secret guard hook", "ex11_secret_guard_hook.py"), ("Interview Q&amp;A", "INTERVIEW.md")], M),
+       [("Hooks", "01_hooks.md"), ("Worktrees", "02_worktrees.md"), ("Submodules &amp; subtree", "03_submodules_and_subtree.md"),
+        ("Line endings", "04_line_endings_and_attributes.md"), ("Secrets, LFS, signing", "05_secrets_big_files_and_signing.md"),
+        ("Exercise: secret guard hook", "ex11_secret_guard_hook/"), ("Interview Q&amp;A", "INTERVIEW.md")], M),
 
  why(M, "Advanced Git", "Problems that appear in real teams",
      "An API key pushed to GitHub. A diff where all 500 lines \"changed\". A hotfix needed while your dev server is running. "
@@ -128,5 +128,5 @@ git config --global commit.gpgsign true'''),
       "<b>Submodules</b> pin other repos; packages are often simpler.",
       "<b>.gitattributes</b> + <b>--renormalize</b> end line-ending wars.",
       "Leaked secret: rotate, filter-repo, prevent. Big files: LFS."],
-     "Do <b>exercises/ex11_secret_guard_hook.py</b>: block secrets with a hook."),
+     "Do <b>exercises/ex11_secret_guard_hook/</b>: block secrets with a hook."),
 ]

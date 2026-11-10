@@ -66,15 +66,15 @@ The answer key is at the bottom, and each answer says which lesson file to revis
 
 | # | Answer | Revisit |
 |---|--------|---------|
-| 1 | B | `01_restore_and_amend.py` |
-| 2 | A | `01_restore_and_amend.py` |
-| 3 | B | `01_restore_and_amend.py` |
-| 4 | B | `01_restore_and_amend.py` |
-| 5 | B | `02_reset_three_modes.py` |
-| 6 | C | `02_reset_three_modes.py` |
-| 7 | B | `03_revert_and_reflog.py` |
-| 8 | B | `03_revert_and_reflog.py` |
-| 9 | B | `03_revert_and_reflog.py` |
+| 1 | B | `01_restore_and_amend.md` |
+| 2 | A | `01_restore_and_amend.md` |
+| 3 | B | `01_restore_and_amend.md` |
+| 4 | B | `01_restore_and_amend.md` |
+| 5 | B | `02_reset_three_modes.md` |
+| 6 | C | `02_reset_three_modes.md` |
+| 7 | B | `03_revert_and_reflog.md` |
+| 8 | B | `03_revert_and_reflog.md` |
+| 9 | B | `03_revert_and_reflog.md` |
 
 </details>
 

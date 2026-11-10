@@ -20,8 +20,8 @@ def plumbing(sb):
 
 SLIDES = [
  cover("09", "Git internals", "Open the hood: objects, trees, refs and HEAD. After this, Git stops being magic.",
-       [("Objects", "01_objects.py"), ("Refs &amp; HEAD", "02_refs_and_head.py"), ("A commit by hand", "03_commit_by_hand.py"),
-        ("Exercise: plumbing commit", "ex09_commit_by_hand.py"), ("Interview Q&amp;A", "INTERVIEW.md")], M),
+       [("Objects", "01_objects.md"), ("Refs &amp; HEAD", "02_refs_and_head.md"), ("A commit by hand", "03_commit_by_hand.md"),
+        ("Exercise: plumbing commit", "ex09_commit_by_hand/"), ("Interview Q&amp;A", "INTERVIEW.md")], M),
 
  why(M, "Internals", "Why look inside .git?",
      "Why does a rebase change commit IDs? Why is creating a branch instant? How can reflog bring back \"deleted\" commits? "
@@ -129,5 +129,8 @@ git cat-file -p <merge-commit>  # 2 parents'''),
       "Refs (branches, tags) are files with IDs; HEAD points to a ref.",
       "<b>HEAD~n</b> first parents, <b>HEAD^2</b> second parent.",
       "git commit = write-tree + commit-tree + update-ref."],
-     "Do <b>exercises/ex09_commit_by_hand.py</b>: a real commit with plumbing only."),
+     "Do <b>exercises/ex09_commit_by_hand/</b>: a real commit with plumbing only."),
 ]
+
+from visuals import add_visuals  # noqa: E402
+SLIDES = add_visuals(9, SLIDES)

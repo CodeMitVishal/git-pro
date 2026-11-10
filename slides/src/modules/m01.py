@@ -4,8 +4,8 @@ from teach_kit import cover, interview, job, mistake, picture, recap, terminal, 
 M = "Module 1 · Git basics"
 SLIDES = [
  cover("01", "Git basics", "What version control is, why every team uses Git, and how to set it up.",
-       [("Why version control", "01_why_version_control.py"), ("Install &amp; configure", "02_install_and_config.py"),
-        ("Exercise: first repository", "ex01_first_repo.py"), ("Interview Q&amp;A", "INTERVIEW.md")], M),
+       [("Why version control", "01_why_version_control.md"), ("Install &amp; configure", "02_install_and_config.md"),
+        ("Exercise: first repository", "ex01_first_repo/"), ("Interview Q&amp;A", "INTERVIEW.md")], M),
 
  why(M, "Version control", "final_v2_REALLY_final.py",
      "Without version control, people copy files: <b>app_old.py, app_backup.py, app_final_v2.py</b>. Nobody knows which is current, "
@@ -93,5 +93,8 @@ open a Pull Request -> review -> merge'''),
       "Git is the tool; GitHub hosts repositories.",
       "Set <b>user.name</b> and <b>user.email</b> once per machine.",
       "Config levels: system &lt; global &lt; local."],
-     "Run <b>exercises/ex01_first_repo.py setup</b> and make your first commit."),
+     "Run <b>bash exercises/ex01_first_repo/setup.sh</b> and make your first commit."),
 ]
+
+from visuals import add_visuals  # noqa: E402
+SLIDES = add_visuals(1, SLIDES)

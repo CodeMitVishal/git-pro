@@ -72,16 +72,16 @@ The answer key is at the bottom, and each answer says which lesson file to revis
 
 | # | Answer | Revisit |
 |---|--------|---------|
-| 1 | B | `01_log_like_a_pro.py` |
-| 2 | B | `01_log_like_a_pro.py` |
-| 3 | B | `01_log_like_a_pro.py` |
-| 4 | B | `02_blame_and_pickaxe.py` |
-| 5 | B | `02_blame_and_pickaxe.py` |
-| 6 | A | `02_blame_and_pickaxe.py` |
-| 7 | B | `03_bisect.py` |
-| 8 | B | `03_bisect.py` |
-| 9 | B | `03_bisect.py` |
-| 10 | B | `03_bisect.py` |
+| 1 | B | `01_log_like_a_pro.md` |
+| 2 | B | `01_log_like_a_pro.md` |
+| 3 | B | `01_log_like_a_pro.md` |
+| 4 | B | `02_blame_and_pickaxe.md` |
+| 5 | B | `02_blame_and_pickaxe.md` |
+| 6 | A | `02_blame_and_pickaxe.md` |
+| 7 | B | `03_bisect.md` |
+| 8 | B | `03_bisect.md` |
+| 9 | B | `03_bisect.md` |
+| 10 | B | `03_bisect.md` |
 
 </details>
 

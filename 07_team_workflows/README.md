@@ -6,32 +6,30 @@ How real teams use Git: GitHub flow, the three merge buttons, commit messages to
 
 ## Lessons
 
-Every lesson runs real Git commands in a throwaway sandbox and prints them with their output. Your own repositories are never touched.
+Every lesson is a page to read: an everyday picture, a commit-graph diagram, then real Git commands with their real output. Each lesson ends with **Try it yourself**: type the same commands in Git Bash, in a new empty folder.
 
 | Lesson | File | Key idea |
 |---|---|---|
-| GitHub flow | [`01_github_flow.py`](01_github_flow.py) | branch → PR → review → merge; merge vs squash vs rebase merge |
-| Conventional Commits | [`02_conventional_commits.py`](02_conventional_commits.py) | feat/fix/docs, semantic versions, generated release notes |
+| GitHub flow | [`01_github_flow.md`](01_github_flow.md) | branch → PR → review → merge; merge vs squash vs rebase merge |
+| Conventional Commits | [`02_conventional_commits.md`](02_conventional_commits.md) | feat/fix/docs, semantic versions, generated release notes |
 | Branching strategies | [`03_branching_strategies.md`](03_branching_strategies.md) | GitHub flow vs Git flow vs trunk-based, feature flags |
 | Pull requests & reviews | [`04_pull_requests_and_reviews.md`](04_pull_requests_and_reviews.md) | good PRs, reviewing, branch protection, CODEOWNERS |
-
-```bash
-python 07_team_workflows/01_github_flow.py
-```
 
 ## Exercise: Commits a reviewer will love
 
 Split three unrelated changes into three Conventional Commits (feat, fix, docs).
 
+Open **Git Bash** (Windows) or any terminal in the course folder. The full task is in [`exercises/ex07_conventional_commits/README.md`](../exercises/ex07_conventional_commits/README.md).
+
 ```bash
-python exercises/ex07_conventional_commits.py setup
+bash exercises/ex07_conventional_commits/setup.sh
 ```
 
 ```bash
-python exercises/ex07_conventional_commits.py check
+bash exercises/ex07_conventional_commits/check.sh
 ```
 
-- Solution: [`solutions/ex07_conventional_commits.py`](../solutions/ex07_conventional_commits.py)
+- Solution: [`solutions/ex07_conventional_commits.md`](../solutions/ex07_conventional_commits.md)
 
 ## Knowledge check
 

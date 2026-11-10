@@ -66,15 +66,15 @@ The answer key is at the bottom, and each answer says which lesson file to revis
 
 | # | Answer | Revisit |
 |---|--------|---------|
-| 1 | B | `01_clone_push_pull.py` |
-| 2 | B | `01_clone_push_pull.py` |
-| 3 | B | `02_fetch_vs_pull.py` |
-| 4 | A | `02_fetch_vs_pull.py` |
-| 5 | A | `02_fetch_vs_pull.py` |
-| 6 | B | `02_fetch_vs_pull.py` |
-| 7 | B | `03_rejected_push_and_force.py` |
-| 8 | B | `03_rejected_push_and_force.py` |
-| 9 | B | `03_rejected_push_and_force.py` |
+| 1 | B | `01_clone_push_pull.md` |
+| 2 | B | `01_clone_push_pull.md` |
+| 3 | B | `02_fetch_vs_pull.md` |
+| 4 | A | `02_fetch_vs_pull.md` |
+| 5 | A | `02_fetch_vs_pull.md` |
+| 6 | B | `02_fetch_vs_pull.md` |
+| 7 | B | `03_rejected_push_and_force.md` |
+| 8 | B | `03_rejected_push_and_force.md` |
+| 9 | B | `03_rejected_push_and_force.md` |
 
 </details>
 

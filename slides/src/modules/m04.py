@@ -26,8 +26,8 @@ git commit -qam "Announce free shipping"
 '''
 SLIDES = [
  cover("04", "Branches &amp; merging", "Build features in parallel without breaking main, then bring the work together.",
-       [("Branches are pointers", "01_branches_are_pointers.py"), ("Fast-forward vs three-way", "02_fast_forward_and_three_way.py"),
-        ("Merge conflicts", "03_merge_conflicts.py"), ("Exercise: resolve a conflict", "ex04_merge_conflict.py"),
+       [("Branches are pointers", "01_branches_are_pointers.md"), ("Fast-forward vs three-way", "02_fast_forward_and_three_way.md"),
+        ("Merge conflicts", "03_merge_conflicts.md"), ("Exercise: resolve a conflict", "ex04_merge_conflict/"),
         ("Interview Q&amp;A", "INTERVIEW.md")], M),
 
  why(M, "Branches", "Why branches?",
@@ -130,5 +130,8 @@ git branch -d feature/SHOP-142-coupons'''),
       "Fast-forward: just move the pointer. Three-way: a merge commit.",
       "Conflicts: edit, remove markers, <b>add</b>, <b>commit</b> (or <b>--abort</b>).",
       "Delete merged branches with <b>git branch -d</b>."],
-     "Do <b>exercises/ex04_merge_conflict.py</b>: merge dark mode and resolve the conflict."),
+     "Do <b>exercises/ex04_merge_conflict/</b>: merge dark mode and resolve the conflict."),
 ]
+
+from visuals import add_visuals  # noqa: E402
+SLIDES = add_visuals(4, SLIDES)

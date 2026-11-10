@@ -6,31 +6,29 @@ Use history as a detective: filter the log, find who changed a line and why, fin
 
 ## Lessons
 
-Every lesson runs real Git commands in a throwaway sandbox and prints them with their output. Your own repositories are never touched.
+Every lesson is a page to read: an everyday picture, a commit-graph diagram, then real Git commands with their real output. Each lesson ends with **Try it yourself**: type the same commands in Git Bash, in a new empty folder.
 
 | Lesson | File | Key idea |
 |---|---|---|
-| git log like a detective | [`01_log_like_a_pro.py`](01_log_like_a_pro.py) | --author, --grep, --since, -- path, --format, shortlog |
-| blame & the pickaxe | [`02_blame_and_pickaxe.py`](02_blame_and_pickaxe.py) | blame -L, log -S / -G, git grep in any version |
-| git bisect | [`03_bisect.py`](03_bisect.py) | binary search for the first bad commit; bisect run |
-
-```bash
-python 10_debugging_history/01_log_like_a_pro.py
-```
+| git log like a detective | [`01_log_like_a_pro.md`](01_log_like_a_pro.md) | --author, --grep, --since, -- path, --format, shortlog |
+| blame & the pickaxe | [`02_blame_and_pickaxe.md`](02_blame_and_pickaxe.md) | blame -L, log -S / -G, git grep in any version |
+| git bisect | [`03_bisect.md`](03_bisect.md) | binary search for the first bad commit; bisect run |
 
 ## Exercise: Find the commit that broke the prices
 
 30 commits, one of them broke the prices. Use git bisect run to find it.
 
+Open **Git Bash** (Windows) or any terminal in the course folder. The full task is in [`exercises/ex10_find_the_bug/README.md`](../exercises/ex10_find_the_bug/README.md).
+
 ```bash
-python exercises/ex10_find_the_bug.py setup
+bash exercises/ex10_find_the_bug/setup.sh
 ```
 
 ```bash
-python exercises/ex10_find_the_bug.py check
+bash exercises/ex10_find_the_bug/check.sh
 ```
 
-- Solution: [`solutions/ex10_find_the_bug.py`](../solutions/ex10_find_the_bug.py)
+- Solution: [`solutions/ex10_find_the_bug.md`](../solutions/ex10_find_the_bug.md)
 
 ## Knowledge check
 

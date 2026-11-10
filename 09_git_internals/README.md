@@ -6,31 +6,29 @@ Open the hood: blobs, trees, commits and tags in the object database; refs, HEAD
 
 ## Lessons
 
-Every lesson runs real Git commands in a throwaway sandbox and prints them with their output. Your own repositories are never touched.
+Every lesson is a page to read: an everyday picture, a commit-graph diagram, then real Git commands with their real output. Each lesson ends with **Try it yourself**: type the same commands in Git Bash, in a new empty folder.
 
 | Lesson | File | Key idea |
 |---|---|---|
-| Objects | [`01_objects.py`](01_objects.py) | blob, tree, commit, tag; cat-file, hash-object; snapshots not diffs |
-| Refs & HEAD | [`02_refs_and_head.py`](02_refs_and_head.py) | branches as files, symbolic HEAD, HEAD~ vs HEAD^, detached HEAD |
-| A commit by hand | [`03_commit_by_hand.py`](03_commit_by_hand.py) | hash-object → update-index → write-tree → commit-tree → update-ref |
-
-```bash
-python 09_git_internals/01_objects.py
-```
+| Objects | [`01_objects.md`](01_objects.md) | blob, tree, commit, tag; cat-file, hash-object; snapshots not diffs |
+| Refs & HEAD | [`02_refs_and_head.md`](02_refs_and_head.md) | branches as files, symbolic HEAD, HEAD~ vs HEAD^, detached HEAD |
+| A commit by hand | [`03_commit_by_hand.md`](03_commit_by_hand.md) | hash-object → update-index → write-tree → commit-tree → update-ref |
 
 ## Exercise: Make a commit without git add or git commit
 
 Create a real commit using only plumbing commands, then inspect the objects you made.
 
+Open **Git Bash** (Windows) or any terminal in the course folder. The full task is in [`exercises/ex09_commit_by_hand/README.md`](../exercises/ex09_commit_by_hand/README.md).
+
 ```bash
-python exercises/ex09_commit_by_hand.py setup
+bash exercises/ex09_commit_by_hand/setup.sh
 ```
 
 ```bash
-python exercises/ex09_commit_by_hand.py check
+bash exercises/ex09_commit_by_hand/check.sh
 ```
 
-- Solution: [`solutions/ex09_commit_by_hand.py`](../solutions/ex09_commit_by_hand.py)
+- Solution: [`solutions/ex09_commit_by_hand.md`](../solutions/ex09_commit_by_hand.md)
 
 ## Knowledge check
 

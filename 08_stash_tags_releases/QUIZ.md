@@ -66,15 +66,15 @@ The answer key is at the bottom, and each answer says which lesson file to revis
 
 | # | Answer | Revisit |
 |---|--------|---------|
-| 1 | B | `01_stash.py` |
-| 2 | B | `01_stash.py` |
-| 3 | B | `01_stash.py` |
-| 4 | B | `02_tags_and_semver.py` |
-| 5 | B | `02_tags_and_semver.py` |
-| 6 | B | `02_tags_and_semver.py` |
-| 7 | B | `02_tags_and_semver.py` |
-| 8 | B | `03_release_notes.py` |
-| 9 | B | `03_release_notes.py` |
+| 1 | B | `01_stash.md` |
+| 2 | B | `01_stash.md` |
+| 3 | B | `01_stash.md` |
+| 4 | B | `02_tags_and_semver.md` |
+| 5 | B | `02_tags_and_semver.md` |
+| 6 | B | `02_tags_and_semver.md` |
+| 7 | B | `02_tags_and_semver.md` |
+| 8 | B | `03_release_notes.md` |
+| 9 | B | `03_release_notes.md` |
 
 </details>
 

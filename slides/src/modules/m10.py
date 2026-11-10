@@ -1,11 +1,7 @@
 """Slides · Module 10 · Debugging with history"""
-import pathlib
-import sys
-
 from teach_kit import cover, interview, job, mistake, picture, recap, terminal, trace, why
 
 M = "Module 10 · Debugging with history"
-PY = pathlib.Path(sys.executable).as_posix()
 
 
 def team_log(sb):
@@ -29,18 +25,19 @@ def cart_history(sb):
 
 def sixteen(sb):
     sb.script("git init", show=False)
-    sb.write("check_price.py", "from price import gross\nimport sys\nsys.exit(0 if gross(100) == 119 else 1)\n")
+    sb.write("check_price.sh", "#!/bin/sh\ngrep -q \"1.19\" price.txt\n")
     for i in range(1, 17):
         rate = "1.91" if i >= 11 else "1.19"
-        sb.write("price.py", f"# version {i}\ndef gross(net):\n    return round(net * {rate})\n")
+        sb.write("price.txt", f"rate = {rate}\n")
+        sb.append("CHANGELOG.txt", f"Change {i}\n")
         sb.script(f'git add .\ngit commit -q -m "Change {i}"', show=False)
     sb.script("git tag v1.0.0 HEAD~15", show=False)
 
 
 SLIDES = [
  cover("10", "Debugging with history", "History is evidence: filter the log, blame a line, search with the pickaxe, and bisect a bug.",
-       [("git log like a detective", "01_log_like_a_pro.py"), ("blame &amp; the pickaxe", "02_blame_and_pickaxe.py"),
-        ("git bisect", "03_bisect.py"), ("Exercise: find the bug", "ex10_find_the_bug.py"), ("Interview Q&amp;A", "INTERVIEW.md")], M),
+       [("git log like a detective", "01_log_like_a_pro.md"), ("blame &amp; the pickaxe", "02_blame_and_pickaxe.md"),
+        ("git bisect", "03_bisect.md"), ("Exercise: find the bug", "ex10_find_the_bug/"), ("Interview Q&amp;A", "INTERVIEW.md")], M),
 
  why(M, "Debugging", "\"It worked last week\"",
      "Prices are wrong in production. 200 commits went in since the last good release. Reading them one by one takes a day, "
@@ -71,10 +68,9 @@ git grep -n rate HEAD~1
 
  terminal(M, "bisect", "Let a script do the testing", f'''
 git bisect start HEAD v1.0.0
-git bisect run "{PY}" check_price.py
-git bisect reset
+git bisect run sh check_price.sh
 ''', ["Exit code 0 = good, 1-127 = bad, 125 = skip.", "16 commits &#8594; 4 checks.",
-      "Always <b>git bisect reset</b> at the end."], before=sixteen),
+      "Then <b>git bisect reset</b> to go back to main."], before=sixteen),
 
  trace(M, "Debugging", "Which tool for which question?", ["Question", "Tool"],
        [["What changed recently in payments/?", "<span class=\"m\">git log --oneline --since=\"1 week ago\" -- payments/</span>"],
@@ -123,5 +119,8 @@ git log --first-parent --oneline main'''),
       "<b>log -S / -G</b>: when code appeared or disappeared.",
       "<b>git grep</b>: search any version.",
       "<b>bisect run</b>: the first bad commit in ~log2(n) steps."],
-     "Do <b>exercises/ex10_find_the_bug.py</b>: 30 commits, one bug, bisect it."),
+     "Do <b>exercises/ex10_find_the_bug/</b>: 30 commits, one bug, bisect it."),
 ]
+
+from visuals import add_visuals  # noqa: E402
+SLIDES = add_visuals(10, SLIDES)

@@ -72,13 +72,13 @@ The answer key is at the bottom, and each answer says which lesson file to revis
 
 | # | Answer | Revisit |
 |---|--------|---------|
-| 1 | B | `01_hooks.py` |
-| 2 | B | `01_hooks.py` |
-| 3 | B | `01_hooks.py` |
-| 4 | B | `02_worktrees.py` |
-| 5 | B | `03_submodules_and_subtree.py` |
-| 6 | B | `03_submodules_and_subtree.py` |
-| 7 | B | `04_line_endings_and_attributes.py` |
+| 1 | B | `01_hooks.md` |
+| 2 | B | `01_hooks.md` |
+| 3 | B | `01_hooks.md` |
+| 4 | B | `02_worktrees.md` |
+| 5 | B | `03_submodules_and_subtree.md` |
+| 6 | B | `03_submodules_and_subtree.md` |
+| 7 | B | `04_line_endings_and_attributes.md` |
 | 8 | B | `05_secrets_big_files_and_signing.md` |
 | 9 | B | `05_secrets_big_files_and_signing.md` |
 | 10 | A | `05_secrets_big_files_and_signing.md` |

@@ -66,11 +66,11 @@ The answer key is at the bottom, and each answer says which lesson file to revis
 
 | # | Answer | Revisit |
 |---|--------|---------|
-| 1 | B | `01_github_flow.py` |
-| 2 | B | `01_github_flow.py` |
-| 3 | C | `01_github_flow.py` |
-| 4 | C | `02_conventional_commits.py` |
-| 5 | B | `02_conventional_commits.py` |
+| 1 | B | `01_github_flow.md` |
+| 2 | B | `01_github_flow.md` |
+| 3 | C | `01_github_flow.md` |
+| 4 | C | `02_conventional_commits.md` |
+| 5 | B | `02_conventional_commits.md` |
 | 6 | B | `03_branching_strategies.md` |
 | 7 | B | `03_branching_strategies.md` |
 | 8 | B | `04_pull_requests_and_reviews.md` |

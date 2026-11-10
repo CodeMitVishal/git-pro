@@ -66,15 +66,15 @@ The answer key is at the bottom, and each answer says which lesson file to revis
 
 | # | Answer | Revisit |
 |---|--------|---------|
-| 1 | B | `01_rebase_basics.py` |
-| 2 | B | `01_rebase_basics.py` |
-| 3 | B | `01_rebase_basics.py` |
-| 4 | B | `01_rebase_basics.py` |
-| 5 | B | `02_interactive_rebase.py` |
-| 6 | B | `02_interactive_rebase.py` |
-| 7 | B | `02_interactive_rebase.py` |
-| 8 | A | `03_cherry_pick.py` |
-| 9 | B | `03_cherry_pick.py` |
+| 1 | B | `01_rebase_basics.md` |
+| 2 | B | `01_rebase_basics.md` |
+| 3 | B | `01_rebase_basics.md` |
+| 4 | B | `01_rebase_basics.md` |
+| 5 | B | `02_interactive_rebase.md` |
+| 6 | B | `02_interactive_rebase.md` |
+| 7 | B | `02_interactive_rebase.md` |
+| 8 | A | `03_cherry_pick.md` |
+| 9 | B | `03_cherry_pick.md` |
 
 </details>
 

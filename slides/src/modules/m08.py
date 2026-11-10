@@ -16,8 +16,8 @@ echo "def coupon(code): ..." > coupon.py
 '''
 SLIDES = [
  cover("08", "Stash, tags &amp; releases", "Switch context in seconds, name your releases, and answer \"what changed?\".",
-       [("git stash", "01_stash.py"), ("Tags &amp; SemVer", "02_tags_and_semver.py"), ("Release notes", "03_release_notes.py"),
-        ("Exercise: hotfix release", "ex08_hotfix_release.py"), ("Interview Q&amp;A", "INTERVIEW.md")], M),
+       [("git stash", "01_stash.md"), ("Tags &amp; SemVer", "02_tags_and_semver.md"), ("Release notes", "03_release_notes.md"),
+        ("Exercise: hotfix release", "ex08_hotfix_release/"), ("Interview Q&amp;A", "INTERVIEW.md")], M),
 
  why(M, "Stash", "Interrupted in the middle of your work",
      "You're halfway through a feature when the boss says: <b>\"Production is broken, fix it now!\"</b> Your changes aren't ready to "
@@ -142,5 +142,8 @@ git switch - && git stash pop'''),
       "Push tags explicitly: <b>origin v1.2.0</b> / <b>--follow-tags</b>.",
       "SemVer: <b>MAJOR.MINOR.PATCH</b>.",
       "<b>log A..B</b> + <b>shortlog -sn</b> = release notes."],
-     "Do <b>exercises/ex08_hotfix_release.py</b>: stash, tag, restore."),
+     "Do <b>exercises/ex08_hotfix_release/</b>: stash, tag, restore."),
 ]
+
+from visuals import add_visuals  # noqa: E402
+SLIDES = add_visuals(8, SLIDES)

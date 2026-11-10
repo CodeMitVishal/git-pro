@@ -6,31 +6,29 @@ Fix any mistake: throw away edits, unstage, fix the last commit, move a branch b
 
 ## Lessons
 
-Every lesson runs real Git commands in a throwaway sandbox and prints them with their output. Your own repositories are never touched.
+Every lesson is a page to read: an everyday picture, a commit-graph diagram, then real Git commands with their real output. Each lesson ends with **Try it yourself**: type the same commands in Git Bash, in a new empty folder.
 
 | Lesson | File | Key idea |
 |---|---|---|
-| restore & amend | [`01_restore_and_amend.py`](01_restore_and_amend.py) | discard edits, unstage, fix the last commit |
-| reset: soft, mixed, hard | [`02_reset_three_modes.py`](02_reset_three_modes.py) | move the branch back, three ways |
-| revert & reflog | [`03_revert_and_reflog.py`](03_revert_and_reflog.py) | safe undo on shared branches; the safety net |
-
-```bash
-python 03_undoing_things/01_restore_and_amend.py
-```
+| restore & amend | [`01_restore_and_amend.md`](01_restore_and_amend.md) | discard edits, unstage, fix the last commit |
+| reset: soft, mixed, hard | [`02_reset_three_modes.md`](02_reset_three_modes.md) | move the branch back, three ways |
+| revert & reflog | [`03_revert_and_reflog.md`](03_revert_and_reflog.md) | safe undo on shared branches; the safety net |
 
 ## Exercise: Undo three mistakes
 
 Discard a messy edit, undo a bad commit on a shared branch, and bring a deleted branch back.
 
+Open **Git Bash** (Windows) or any terminal in the course folder. The full task is in [`exercises/ex03_undo_mistakes/README.md`](../exercises/ex03_undo_mistakes/README.md).
+
 ```bash
-python exercises/ex03_undo_mistakes.py setup
+bash exercises/ex03_undo_mistakes/setup.sh
 ```
 
 ```bash
-python exercises/ex03_undo_mistakes.py check
+bash exercises/ex03_undo_mistakes/check.sh
 ```
 
-- Solution: [`solutions/ex03_undo_mistakes.py`](../solutions/ex03_undo_mistakes.py)
+- Solution: [`solutions/ex03_undo_mistakes.md`](../solutions/ex03_undo_mistakes.md)
 
 ## Knowledge check
 

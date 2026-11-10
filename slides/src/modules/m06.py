@@ -23,8 +23,8 @@ git commit -qm "Add shipping"
 '''
 SLIDES = [
  cover("06", "Remotes &amp; GitHub", "Share work with a team: clone, push, pull, fetch, and force-push safely.",
-       [("clone, push, pull", "01_clone_push_pull.py"), ("fetch vs pull", "02_fetch_vs_pull.py"),
-        ("Rejected pushes &amp; force", "03_rejected_push_and_force.py"), ("Exercise: sync with your team", "ex06_sync_with_team.py"),
+       [("clone, push, pull", "01_clone_push_pull.md"), ("fetch vs pull", "02_fetch_vs_pull.md"),
+        ("Rejected pushes &amp; force", "03_rejected_push_and_force.md"), ("Exercise: sync with your team", "ex06_sync_with_team/"),
         ("Interview Q&amp;A", "INTERVIEW.md")], M),
 
  why(M, "Remotes", "Your laptop is not a team",
@@ -118,5 +118,8 @@ git branch -vv'''),
       "<b>fetch</b> updates origin/*; <b>pull</b> = fetch + merge/rebase.",
       "Rejected push &#8594; <b>pull --rebase</b> &#8594; push.",
       "Force only your own branch, with <b>--force-with-lease</b>."],
-     "Do <b>exercises/ex06_sync_with_team.py</b>: get Priya's commit and push yours."),
+     "Do <b>exercises/ex06_sync_with_team/</b>: get Priya's commit and push yours."),
 ]
+
+from visuals import add_visuals  # noqa: E402
+SLIDES = add_visuals(6, SLIDES)

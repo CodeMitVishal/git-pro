@@ -6,31 +6,29 @@ Work with a shared repository: clone, push and pull, the difference between fetc
 
 ## Lessons
 
-Every lesson runs real Git commands in a throwaway sandbox and prints them with their output. Your own repositories are never touched.
+Every lesson is a page to read: an everyday picture, a commit-graph diagram, then real Git commands with their real output. Each lesson ends with **Try it yourself**: type the same commands in Git Bash, in a new empty folder.
 
 | Lesson | File | Key idea |
 |---|---|---|
-| clone, push, pull | [`01_clone_push_pull.py`](01_clone_push_pull.py) | remotes, origin, push -u, pull; SSH vs HTTPS |
-| fetch vs pull | [`02_fetch_vs_pull.py`](02_fetch_vs_pull.py) | origin/main, ahead/behind, pull --rebase |
-| Rejected pushes & force | [`03_rejected_push_and_force.py`](03_rejected_push_and_force.py) | non-fast-forward, --force vs --force-with-lease |
-
-```bash
-python 06_remotes_github/01_clone_push_pull.py
-```
+| clone, push, pull | [`01_clone_push_pull.md`](01_clone_push_pull.md) | remotes, origin, push -u, pull; SSH vs HTTPS |
+| fetch vs pull | [`02_fetch_vs_pull.md`](02_fetch_vs_pull.md) | origin/main, ahead/behind, pull --rebase |
+| Rejected pushes & force | [`03_rejected_push_and_force.md`](03_rejected_push_and_force.md) | non-fast-forward, --force vs --force-with-lease |
 
 ## Exercise: Sync with your team
 
 Your push is rejected because a teammate pushed first. Integrate their work and push with a linear history.
 
+Open **Git Bash** (Windows) or any terminal in the course folder. The full task is in [`exercises/ex06_sync_with_team/README.md`](../exercises/ex06_sync_with_team/README.md).
+
 ```bash
-python exercises/ex06_sync_with_team.py setup
+bash exercises/ex06_sync_with_team/setup.sh
 ```
 
 ```bash
-python exercises/ex06_sync_with_team.py check
+bash exercises/ex06_sync_with_team/check.sh
 ```
 
-- Solution: [`solutions/ex06_sync_with_team.py`](../solutions/ex06_sync_with_team.py)
+- Solution: [`solutions/ex06_sync_with_team.md`](../solutions/ex06_sync_with_team.md)
 
 ## Knowledge check
 

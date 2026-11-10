@@ -40,8 +40,8 @@ def squash(sb):
 
 SLIDES = [
  cover("05", "Rebase &amp; rewriting history", "Clean, linear history: rebase, squash, reword and cherry-pick, plus the golden rule.",
-       [("rebase basics", "01_rebase_basics.py"), ("Interactive rebase", "02_interactive_rebase.py"),
-        ("cherry-pick", "03_cherry_pick.py"), ("Exercise: clean up a branch", "ex05_clean_history.py"),
+       [("rebase basics", "01_rebase_basics.md"), ("Interactive rebase", "02_interactive_rebase.md"),
+        ("cherry-pick", "03_cherry_pick.md"), ("Exercise: clean up a branch", "ex05_clean_history/"),
         ("Interview Q&amp;A", "INTERVIEW.md")], M),
 
  why(M, "Rebase", "Why rewrite history?",
@@ -155,5 +155,8 @@ git cherry-pick -x a1b2c3d'''),
       "<b>rebase -i</b>: pick, reword, squash, fixup, drop, reorder.",
       "<b>cherry-pick</b> copies single commits (hotfix backports).",
       "Never rebase shared history."],
-     "Do <b>exercises/ex05_clean_history.py</b>: squash and rebase a messy branch."),
+     "Do <b>exercises/ex05_clean_history/</b>: squash and rebase a messy branch."),
 ]
+
+from visuals import add_visuals  # noqa: E402
+SLIDES = add_visuals(5, SLIDES)

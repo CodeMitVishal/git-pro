@@ -6,29 +6,27 @@ Put everything together. Diagnose a broken repository calmly (look, find, plan, 
 
 ## Lessons
 
-Every lesson runs real Git commands in a throwaway sandbox and prints them with their output. Your own repositories are never touched.
+Every lesson is a page to read: an everyday picture, a commit-graph diagram, then real Git commands with their real output. Each lesson ends with **Try it yourself**: type the same commands in Git Bash, in a new empty folder.
 
 | Lesson | File | Key idea |
 |---|---|---|
-| Rescue walkthrough | [`01_rescue_walkthrough.py`](01_rescue_walkthrough.py) | look → find → plan → act; committed to main by mistake |
-
-```bash
-python 12_capstone/01_rescue_walkthrough.py
-```
+| Rescue walkthrough | [`01_rescue_walkthrough.md`](01_rescue_walkthrough.md) | look → find → plan → act; committed to main by mistake |
 
 ## Exercise: Rescue the repository and ship a release
 
 A wrong-branch commit, a committed debug file, a teammate's push and a release to tag. Fix it all and leave a clean, correct history.
 
+Open **Git Bash** (Windows) or any terminal in the course folder. The full task is in [`exercises/ex12_rescue_the_repo/README.md`](../exercises/ex12_rescue_the_repo/README.md).
+
 ```bash
-python exercises/ex12_rescue_the_repo.py setup
+bash exercises/ex12_rescue_the_repo/setup.sh
 ```
 
 ```bash
-python exercises/ex12_rescue_the_repo.py check
+bash exercises/ex12_rescue_the_repo/check.sh
 ```
 
-- Solution: [`solutions/ex12_rescue_the_repo.py`](../solutions/ex12_rescue_the_repo.py)
+- Solution: [`solutions/ex12_rescue_the_repo.md`](../solutions/ex12_rescue_the_repo.md)
 
 ## Knowledge check
 
