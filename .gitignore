@@ -2,3 +2,8 @@ playground/
 __pycache__/
 *.pyc
 slides/src/html/*.html
+
+# Maintainer-only build tooling (kept locally, not part of the course)
+/tools/
+/slides/src/
+/sandbox.py
